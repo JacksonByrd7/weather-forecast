@@ -37,11 +37,17 @@
     const apiUrl1 = "http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}";
 
     async function checkWeather (){
-        const response = await fetch(apiUrl + `&appid=${apiKey} `)
+        const response = await fetch(apiUrl1 + `&appid=${apiKey} `);
+        var data = await response.json();
+
+        console.log(data)
     }
 
     //This is the geolocator api
     const apiUrl2 = "http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}";
+    
+    checkWeather ()
+
 </script>
 
     
