@@ -62,7 +62,8 @@ var winds=[6];
 var dates=[6];
 
 function getLocation(city) {
-    var locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={apiKey}`
+    var locationUrl = 
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
       "&appid=" +
       apiKey;
@@ -80,7 +81,8 @@ function getLocation(city) {
   }
 
   function getWeather(lat, lon){
-    var weatherUrl =`http:api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    var weatherUrl =
+    "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric"+"&lang=english"+"&appid="+apiKey;
       fetch(weatherUrl)
     .then(function (data) {
       return data.json();
